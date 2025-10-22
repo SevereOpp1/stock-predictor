@@ -10,7 +10,10 @@ st.title("📈 Stock Predictor 📉")
 st.write("Enter a stock ticker to predict next trading day's close compared to yesterday's.")
 
 # --- Input ---
-ticker = st.text_input("Enter Stock Ticker (e.g., AAPL, TSLA), press 'Enter', then 'Predict'.")
+with st.form("predict_form"):
+    ticker = st.text_input("Enter Stock Ticker (e.g., AAPL, TSLA)")
+    submit = st.form_submit_button("🔮 PREDICT")
+
 
 # --- Load model once ---
 MODEL_PATH = "stock_cnn.h5"
@@ -58,7 +61,7 @@ def transform_data(look_back, stock_data):
     return X
 
 # --- Predict button ---
-if st.button("PREDICT"):
+if submit:
     if not ticker:
         st.error("Please enter a ticker symbol first, press 'Enter', then 'Predict'.")
     else:
@@ -80,5 +83,6 @@ if st.button("PREDICT"):
 
         except Exception as e:
             st.error(f"Error fetching data or predicting: {e}")
+
 
 
