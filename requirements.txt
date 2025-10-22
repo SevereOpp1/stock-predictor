@@ -2,6 +2,6 @@ streamlit
 tensorflow
 pandas
 numpy
-yfinance
-pickle
+yfinance>=0.2.66
 scikit-learn
+
