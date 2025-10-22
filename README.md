@@ -6,6 +6,7 @@ This repository contains a Streamlit app that predicts next-day stock movement (
 The app is designed for Streamlit deployment (local or Cloud) and includes all necessary files to run the app.
 
 FILES:
+
 predictUIv2.py – Main Streamlit app code
 
 stock_cnn.h5 – Trained CNN model for predictions
