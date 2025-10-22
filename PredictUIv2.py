@@ -10,7 +10,7 @@ st.title("📈 Stock Predictor 📉")
 st.write("Enter a stock ticker to predict next trading day's close compared to yesterday's.")
 
 # --- Input ---
-ticker = st.text_input("Enter Stock Ticker (e.g., AAPL, TSLA)")
+ticker = st.text_input("Enter Stock Ticker (e.g., AAPL, TSLA), press 'Enter', then 'Predict'.")
 
 # --- Load model once ---
 MODEL_PATH = "stock_cnn.h5"
@@ -80,4 +80,5 @@ if st.button("PREDICT"):
 
         except Exception as e:
             st.error(f"Error fetching data or predicting: {e}")
+
 
