@@ -60,7 +60,7 @@ def transform_data(look_back, stock_data):
 # --- Predict button ---
 if st.button("PREDICT"):
     if not ticker:
-        st.error("Please enter a ticker symbol first.")
+        st.error("Please enter a ticker symbol first, press 'Enter', then 'Predict'.")
     else:
         try:
             st.write(f"Fetching last 7 days of data for {ticker.upper()}...")
@@ -80,3 +80,4 @@ if st.button("PREDICT"):
 
         except Exception as e:
             st.error(f"Error fetching data or predicting: {e}")
+
