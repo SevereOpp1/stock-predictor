@@ -12,6 +12,10 @@ if st.button("Predict"):
             resp = requests.post(url, json=payload)
             data = resp.json()
             st.write(data)
+
+            st.caption("Probabilities represent the model's predicted likelihood for the stock to go up or down (softmax output) with respect to yesterday's closing price.")
+
         except Exception as e:
             st.error(f"Error contacting backend: {e}")
+
 
