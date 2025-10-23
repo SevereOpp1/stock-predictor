@@ -6,7 +6,7 @@ ticker = st.text_input("Enter Ticker")
 
 if st.button("Predict"):
     if ticker:
-        url = "BACKEND_URL"
+        url = st.secrets["BACKEND_URL"]
         payload = {"ticker": ticker}
         try:
             resp = requests.post(url, json=payload)
@@ -14,3 +14,4 @@ if st.button("Predict"):
             st.write(data)
         except Exception as e:
             st.error(f"Error contacting backend: {e}")
+
